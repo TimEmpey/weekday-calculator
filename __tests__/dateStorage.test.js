@@ -22,5 +22,6 @@ describe('DateStorage', () => {
   test('should return day of week based on month, day, year', () => {
     let input = new DateStorage(8, 31, 2022, [0,6])
     expect(input.findMonth()).toEqual(1)
+
   });
 });

@@ -1,3 +1,39 @@
+const yearCycles = {
+  27: [0, 5],
+  26: [0, 4],
+  25: [0, 3],
+  24: [1, 1],
+  23: [0, 0],
+  22: [0, 6],
+  21: [0, 5],
+  20: [1, 3],
+  19: [0, 2],
+  18: [0, 1],
+  17: [0, 0],
+  16: [1, 5],
+  15: [0, 4],
+  14: [0, 3],
+  13: [0, 2],
+  12: [1, 0],
+  11: [0, 6],
+  10: [0, 5],
+  9: [0, 4],
+  8: [1, 2],
+  7: [0, 1],
+  6: [0, 0],
+  5: [0, 6],
+  4: [1, 4],
+  3: [0, 3],
+  2: [0, 2],
+  1: [0, 1],
+  0: [1, 6]
+};
+
+const days ={
+  0:
+  1:
+  2:
+}
 export default class DateStorage {
   constructor(month, day, year, start) {
     this.month = month;
@@ -10,44 +46,7 @@ export default class DateStorage {
     let yearStart = 0
     let leapYear = 0
     let cycle = (this.year - 12 ) % 28
-    if (cycle % 4 === 0) {
-      leapYear = 1
-      if (cycle === 12) {
-        yearStart = 0
-      } else if (cycle === 24) {
-        yearStart = 1
-      } else if (cycle === 8) {
-        yearStart = 2
-      } else if (cycle === 20) {
-        yearStart = 3
-      } else if (cycle === 4) {
-        yearStart = 4
-      } else if (cycle === 16) {
-        yearStart = 5
-      } else if (cycle === 0) {
-        yearStart = 6
-      }
-      this.start.push(leapYear, yearStart)
-      return this.start
-    } else {
-      if (cycle === 6 || cycle === 17 || cycle === 23) {
-        yearStart = 0
-      } else if(cycle === 1 || cycle === 7 || cycle === 18) {
-        yearStart = 1
-      } else if(cycle === 2 || cycle === 13 || cycle === 19) {
-        yearStart = 2
-      } else if(cycle === 3 || cycle === 14 || cycle === 25) {
-        yearStart = 3
-      } else if(cycle === 9 || cycle === 15 || cycle === 26) {
-        yearStart = 4
-      } else if(cycle === 10 || cycle === 21 || cycle === 27) {
-        yearStart = 5
-      } else if(cycle === 5 || cycle === 11 || cycle === 22) {
-        yearStart = 6
-      }
-      this.start.push(leapYear, yearStart)
-      return this.start
-    }
+    return yearCycles[cycle]
   }
 
   findMonth() {
@@ -93,6 +92,7 @@ export default class DateStorage {
       }
     }
     let firstDayOfMonth = monthStart + arr[1]
+/* istanbul ignore else */ 
     if (firstDayOfMonth > 6) {
       firstDayOfMonth -= 7
     }
