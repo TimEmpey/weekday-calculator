@@ -1,8 +1,8 @@
-# _Template_
+# _Weekday Calculator_
 
 #### By _**Tim Empey**_
 
-#### _Quicken file creation process_
+#### __
 
 ## Technologies Used
 

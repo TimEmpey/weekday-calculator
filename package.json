@@ -1,5 +1,5 @@
 {
-  "name": "TEMPLTE",
+  "name": "weekday-calculator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,6 @@
     "start": "npm run build && webpack-dev-server --open --mode=development",
     "lint": "eslint src/*.js",
     "test": "jest --coverage"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": ["html"]
   },
   "keywords": [],
   "author": "",
