@@ -30,72 +30,99 @@ const yearCycles = {
 };
 
 const days ={
-  0:
-  1:
-  2:
+  0:0,
+  1:1,
+  2:2,
+  3:3,
+  4:4,
+  5:5,
+  6:6
 }
+
+const finalDay = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thursday",
+  5: "Friday",
+  6: "Saturday"
+}
+
 export default class DateStorage {
-  constructor(month, day, year, start) {
+  constructor(month, day, year, janStart, monStart) {
     this.month = month;
     this.day = day;
     this.year = year;
-    this.start = start
+    this.start = janStart
+    this.monStart = monStart
   }
 
   findYear() {
-    let yearStart = 0
-    let leapYear = 0
     let cycle = (this.year - 12 ) % 28
-    return yearCycles[cycle]
+    this.start = yearCycles[cycle];
+    return yearCycles[cycle];
   }
 
   findMonth() {
     let month = this.month
     let arr = this.start
-    let monthStart = 0
+    let monthStart = 0;
     if (month === 1) {
-      monthStart = 0
+      monthStart = 0;
     } else if (month === 2) {
-      monthStart = 3
+      monthStart = 3;
     }
     if (this.start[0] === 1) { 
       if (month === 10) {
-        monthStart = 1
+        monthStart = 1;
       } else if (month === 5) {
-        monthStart = 2
+        monthStart = 2;
       } else if (month === 8) {
-        monthStart = 3
+        monthStart = 3;
       } else if (month === 3 || month === 11) {
-        monthStart = 4
+        monthStart = 4;
       } else if (month === 6) {
-        monthStart = 5
+        monthStart = 5;
       } else if (month === 9 || month === 12) {
-        monthStart = 6
+        monthStart = 6;
       } else if (month === 4 || month === 7) {
-        monthStart = 0
+        monthStart = 0;
       }
     } else {
       if (month === 10) {
-        monthStart = 0
+        monthStart = 0;
       } else if (month === 5) {
-        monthStart = 1
+        monthStart = 1;
       } else if (month === 8) {
-        monthStart = 2
+        monthStart = 2;
       } else if (month === 3 || month === 11) {
-        monthStart = 3
+        monthStart = 3;
       } else if (month === 6) {
-        monthStart = 4
+        monthStart = 4;
       } else if (month === 9 || month === 12) {
-        monthStart = 5
+        monthStart = 5;
       } else if (month === 4 || month === 7) {
-        monthStart = 6
+        monthStart = 6;
       }
     }
-    let firstDayOfMonth = monthStart + arr[1]
+    let firstDayOfMonth = monthStart + arr[1];
 /* istanbul ignore else */ 
     if (firstDayOfMonth > 6) {
-      firstDayOfMonth -= 7
+      firstDayOfMonth -= 7;
     }
-    return firstDayOfMonth
+    this.monStart = firstDayOfMonth
+    return firstDayOfMonth;
   }
+
+  findDay() {
+    let num = this.day
+    num += this.monStart
+    num -= 1
+    while (num > 6) {
+      num -= 7
+    }
+    return finalDay[num]
+  }
+
 }

@@ -19,9 +19,13 @@ describe('DateStorage', () => {
     expect(input.findYear()).toEqual([0, 6])
   });
 
-  test('should return day of week based on month, day, year', () => {
+  test('should return day of week based on month, year', () => {
     let input = new DateStorage(8, 31, 2022, [0,6])
     expect(input.findMonth()).toEqual(1)
+  });
 
+  test('should return day of week based on start day of month, day', () => {
+    let input = new DateStorage(1, 1, 2017, [0, 0], 0)
+    expect(input.findDay()).toEqual("Sunday")
   });
 });
