@@ -21,6 +21,8 @@ _Calculator that determines the day of the week of any inputted date._
 
 ## Setup/Installation Requirements
 
+* _Clone repository to desired directory_
+* _Open file with code ._
 * _Installing all packages with $ npm install._
 * _Building the project using webpack with $ npm run build_
 * _Starting a development server with $ npm run start_
