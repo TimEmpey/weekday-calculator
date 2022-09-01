@@ -13,10 +13,6 @@ function handleForm(e) {
   date.findMonth();
   date.findDay();
   let outputDay = date.dayStart;
-
-  //get the input data
-  //create an object of it
-  //get the output so that line 16 can use it
   document.getElementById("results").removeAttribute("class");
   let results = document.getElementById("weekday");
   results.innerText = outputDay;
