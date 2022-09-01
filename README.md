@@ -1,8 +1,8 @@
 # _Weekday Calculator_
 
-#### By _**Tim Empey**_
+#### By _**Tim Empey & Joseph Jackson**_
 
-#### __
+#### _Determines day of week based on date_
 
 ## Technologies Used
 
@@ -10,14 +10,14 @@
 * _HTML_
 * _CSS_
 * _Bootstrap_
-*_Webpack_
-*_Jest_
-*_Babel_
-*_ES Lint_
+* _Webpack_
+* _Jest_
+* _Babel_
+* _ES Lint_
 
 ## Description
 
-_Template repo to streamline the file setup process for JS webpages with all files set up and ready for use_
+_Calculator that determines the day of the week of any inputted date._
 
 ## Setup/Installation Requirements
 
@@ -35,4 +35,4 @@ _Template repo to streamline the file setup process for JS webpages with all fil
 
 _[MIT](https://en.wikipedia.org/wiki/MIT_License)_ 
 
-Copyright (c) _2022_ _Timothy Empey_
+Copyright (c) _2022_ _Timothy Empey & Joseph Jackson_
