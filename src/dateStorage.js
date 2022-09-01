@@ -55,12 +55,13 @@ const newMonthObject = {
 };
 
 export default class DateStorage {
-  constructor(month, day, year, janStart, monStart) {
+  constructor(month, day, year, janStart, monStart, dayStart) {
     this.month = month;
     this.day = day;
     this.year = year;
     this.start = janStart;
     this.monStart = monStart;
+    this.dayStart = dayStart;
   }
 
   findYear() {
@@ -83,12 +84,13 @@ export default class DateStorage {
   }
 
   findDay() {
-    let num = this.day;
+    let num = parseInt(this.day);
     num += this.monStart;
     num -= 1;
     while (num > 6) {
       num -= 7;
     }
+    this.dayStart = finalDay[num];
     return finalDay[num];
   }
 }
