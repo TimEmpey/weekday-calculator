@@ -65,7 +65,12 @@ export default class DateStorage {
   }
 
   findYear() {
-    let cycle = (this.year - 12 ) % 28;
+    let cycle = 0;
+    if (this.year <= 12) {
+      cycle = this.year;
+    } else {
+      cycle = (this.year - 12 ) % 28;
+    }
     this.start = yearCycles[cycle];
     return yearCycles[cycle];
   }

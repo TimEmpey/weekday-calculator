@@ -22,8 +22,15 @@ module.exports = {
       inject: 'body'
     })
   ],
-  module: {
+  module: 
+  {
     rules: [
+      {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
       {
         test: /\.css$/,
         use: [
