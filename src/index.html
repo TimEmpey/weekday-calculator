@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Weekday Calculator</title>
 </head>
 <body>
-
+  <form id="date">
+    <label for="month">Enter a Month: </label>
+    <input type="number" id="month" name="month">
+    <label for="day">Enter a Day: </label>
+    <input type="number" id="day" name="day">
+    <label for="year">Enter a Year: </label>  
+    <input type="number" id="year" name="year">
+    <button type="submit">Find Day</button>
+  </form>
+  <div  class ="hidden" id="results">
+    <h3>Results</h3>
+    <p>This date was on a <span id="weekday"></span></p>
+  </div>
 </body>
 </html>
