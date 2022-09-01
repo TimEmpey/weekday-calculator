@@ -1,11 +1,6 @@
 import DateStorage from '../src/dateStorage.js';
 
 describe('DateStorage', () => {
-  // let input;
-  
-    // beforeEach(() => {
-    //   input = new DateStorage(8, 31, 2022)
-    // });
 
   test('should correctly create a date object with month, day, and year', () => {
     let input = new DateStorage(8, 31, 2022, [])
@@ -23,9 +18,14 @@ describe('DateStorage', () => {
     let input = new DateStorage(8, 31, 2022, [0,6])
     expect(input.findMonth()).toEqual(1)
   });
+  
+  test('should return day of week based on month, year', () => {
+    let input = new DateStorage(8, 20, 2024, [1,1])
+    expect(input.findMonth()).toEqual(4)
+  });
 
   test('should return day of week based on start day of month, day', () => {
-    let input = new DateStorage(1, 1, 2017, [0, 0], 0)
-    expect(input.findDay()).toEqual("Sunday")
+    let input = new DateStorage(8, 31, 2022, [0, 6], 1)
+    expect(input.findDay()).toEqual("Wednesday")
   });
 });
