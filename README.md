@@ -29,7 +29,7 @@ _Calculator that determines the day of the week of any inputted date._
 
 ## Known Bugs
 
-* _No known bugs_
+* _Years ending in 00 with the exception of 2000 will result in the weekday being inaccurate by a day, compounding throughout the year_
 
 ## License
 
