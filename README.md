@@ -2,6 +2,9 @@
 
 #### By _**Tim Empey & Joseph Jackson**_
 
+### Github Pages
+_https://timempey.github.io/weekday-calculator/_
+
 #### _Determines day of week based on date_
 
 ## Technologies Used
